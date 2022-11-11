@@ -4,7 +4,7 @@
 Assim como em outras linguagens, na linguagem *Java* também é possível manipular arquivos. Geralmente, o termo utilizado para manipulacao de arquivo é *'File handling'.*<br>
 
 
-Nesse artigo, vamos aprender a escrever em um arquivo.
+Nesse artigo, vamos aprender a editar um arquivo.
 
 Aqui, abordaremos 2 formas de escrever em um arquivo:
 * Utilizando a class **BufferedWriter**.<br>
@@ -57,17 +57,12 @@ FileWriter fw = new FileWriter(arquivo,false);
 ```  
 
 
-
-No construtor do objeto FileWriter voce pode passar como primeiro argumento tanto uma **String** quanto um objeto **File**.
-
-
-
 A class FileWriter pode receber 2 argumentos no constructor.
 
-*Argumento 1 ->* Um objeto **String** (caminho do arquivo) ou um objeto **File**.
+*Argumento 1 ->* Um objeto **String** (caminho do arquivo) ou um objeto **File**.<br>
 *Argumento 2 ->* valor **Boolean**.
 
-Esse argumento *booleano* representa se o que será escrito será de forma "*append*" ou não.
+_    Esse argumento *booleano* representa se o que será escrito será de forma "*append*" ou não.
 
 	TRUE  -> Acrescentar no final do arquivo (Append) .
 	FALSE -> Sobreescrever o arquivo.
@@ -87,9 +82,9 @@ import java.io.FileWriter;
 
 
 
-O ato de instanciar a class **FileWriter** é considerado pelo java uma ação *sensível*. Se tentar escrever em um arquivo que não exista, vai ser *lançado* uma **IOException** e o programa vai parar de funcionar.
+O ato de instanciar a class **FileWriter** é considerado pelo java uma ação *sensível*. Se você tentar escrever em um arquivo que não existe, será *lançado* uma **IOException** e o programa encerra.
 
-3. Para resolver isso, trate a IOException utilizando o **try catch** ou lance a *exception* utilizando o **throws**.
+3. Para resolver isso, trate a **IOException** utilizando o **try catch** ou lance a *exception* utilizando o **throws**.
 
 
 ```java
@@ -118,8 +113,8 @@ import java.io.IOException;
 
 
 
-4. Crie um objeto da class BufferedWriter:
-*Essa será a class responsável por permitir editar um arquivo*
+4. Crie um objeto da class **BufferedWriter**: <br>
+*Essa será a class responsável por permitir editar um arquivo*.
 
 
 ```java
@@ -160,8 +155,6 @@ import java.io.BufferedWriter;
 
 
 <br>
-<br>
-
 
 Pronto. Temos nossos objetos criados.<br>
 Agora, vamos editar esse arquivo.
@@ -200,10 +193,10 @@ Assim como na class **Scanner**, aqui também precisamos fechar a class **Buffer
 #### Passo a passo - Files
 Outra forma de escrever em um arquivo é utilizando a class **Files** juntamente com o method **.write()** .
 
-Nesse method, precisamos passar como argumentos um objeto *Path* e o conteúdo que queremos escrever.
+Nesse method, precisamos passar como argumentos um objeto **Path** e o conteúdo que queremos escrever.
 
 
-1. Crie 2 String variables que vão representar:
+1. Crie 2 *String variables* que vão representar:
     * caminho do arquivo
     * conteudo do arquivo
 
@@ -213,6 +206,7 @@ String caminho = "caminho/arquivo.txt";
 String conteudo = "Conteúdo do arquivo";
 
 ```
+<br>
 <br>
 
 2. Crie um objeto **Path** que representará o arquivo:
@@ -234,6 +228,7 @@ import java.nio.file.Paths;
 
 ```
 <br>
+<br>
 
 
 3. Use o method **.write()** para escrever no arquivo:
@@ -244,10 +239,11 @@ Files.write(arquivo, conteudo.getBytes());
 
 ```
 
-*Perceba que passamos como argumento o arquivo que queremos editar e o conteudo(String) transformado para Bytes.*
+*Perceba que, passamos como argumento o arquivo que queremos editar e o conteudo(String) transformado para Bytes.*
 
 
-
+<br>
+<br>
 
 4. Como a ação de escrever em um documento é uma ação *sensível*, precisamos tratar uma possível **Exception**.
 
@@ -265,12 +261,14 @@ catch(IOException e){
 
 ```
 <br>
+<br>
+
 Diferente do primeiro exemplo, não precisamos fechar o objeto.
-Afinal, estamos utilizando o method de maneira *static*.
+Afinal, estamos utilizando o method de maneira **static**.
 
+<br>
 
-
-Se tiver alguma dúvida, consulte o código completo abaixo:
+Se tiver alguma dúvida, consulte o código completo:
 
 * [BufferedWriter]()
 * [Files]()

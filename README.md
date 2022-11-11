@@ -62,7 +62,7 @@ A class FileWriter pode receber 2 argumentos no constructor.
 *Argumento 1 ->* Um objeto **String** (caminho do arquivo) ou um objeto **File**.<br>
 *Argumento 2 ->* valor **Boolean**.
 
-_    Esse argumento *booleano* representa se o que será escrito será de forma "*append*" ou não.
+   Esse argumento *booleano* representa se o que será escrito será de forma "*append*" ou não.
 
 	TRUE  -> Acrescentar no final do arquivo (Append) .
 	FALSE -> Sobreescrever o arquivo.
@@ -270,5 +270,5 @@ Afinal, estamos utilizando o method de maneira **static**.
 
 Se tiver alguma dúvida, consulte o código completo:
 
-* [BufferedWriter]()
-* [Files]()
+* [BufferedWriter](https://github.com/lGabrielDev/Java_editar_arquivos-/blob/main/buffered_writer.java)
+* [Files](https://github.com/lGabrielDev/Java_editar_arquivos-/blob/main/files.java)
